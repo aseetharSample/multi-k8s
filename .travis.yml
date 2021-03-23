@@ -1,6 +1,9 @@
 sudo: required
 services: 
   - docker
+env:
+  global:
+    - build_num = $TRAVIS_JOB_ID
 before_install: 
   - openssl aes-256-cbc -K $encrypted_74d4f3573c88_key -iv $encrypted_74d4f3573c88_iv -in muti-k8s-308317-74e11af45910.json.enc -out muti-k8s-308317-74e11af45910.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null;
